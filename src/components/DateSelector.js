@@ -17,7 +17,11 @@ const DateSelector = (props) => {
   return (
     <>
       <div>
-        <select onChange={handleChange} value={props.selectedLaunchYear}>
+        <select
+          onChange={handleChange}
+          value={props.selectedLaunchYear}
+          className="drop-down"
+        >
           <option value="none">Filter by Year</option>
           {uniqueDateList}
         </select>
