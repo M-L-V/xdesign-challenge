@@ -1,5 +1,28 @@
 import React from "react";
 
-const DateSelector = () => {};
+const DateSelector = () => {
+  function handleChange(event) {
+    props.onDateSelected(event.target.value);
+  }
+  //this sets the chosen date to be the value selected
+
+  const uniqueDateList = props.allLaunchYears.map((date) => {
+    return (
+      <option value={date} key={dte}>
+        {date}
+      </option> //this makes a dropdown of all the dates passed in from the state of all the launch years
+    );
+  });
+
+  return (
+    <>
+      <h1> Filter launches by year </h1>
+      <select onChange={handleChange} value={props.selectedLaunchYear}>
+        <option value="none">Filter by Year</option>
+        {uniqueDateList}
+      </select>
+    </>
+  );
+};
 
 export default DateSelector;
