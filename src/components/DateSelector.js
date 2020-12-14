@@ -16,11 +16,12 @@ const DateSelector = (props) => {
 
   return (
     <>
-      <h1> Filter launches by year </h1>
-      <select onChange={handleChange} value={props.selectedLaunchYear}>
-        <option value="none">Filter by Year</option>
-        {uniqueDateList}
-      </select>
+      <div>
+        <select onChange={handleChange} value={props.selectedLaunchYear}>
+          <option value="none">Filter by Year</option>
+          {uniqueDateList}
+        </select>
+      </div>
     </>
   );
 };
