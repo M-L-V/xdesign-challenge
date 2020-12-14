@@ -8,6 +8,7 @@ const LaunchContainer = () => {
   const [loading, setLoading] = useState(true);
   const [errors, setErrors] = useState("");
   const [selectedLaunchYear, setSelectedLaunchYear] = useState("");
+  const [displayedButton, setDisplayedButton] = useState("descendingButton");
 
   async function fetchAllLaunches() {
     const res1 = await fetch("https://api.spacexdata.com/v3/launches");
@@ -51,6 +52,7 @@ const LaunchContainer = () => {
     descending
       .json()
       .then((descending) => setLaunches(descending))
+      .then(() => setDisplayedButton("ascendingButton"))
       .then(() => setLoading(false));
   }
 
@@ -64,6 +66,7 @@ const LaunchContainer = () => {
     ascending
       .json()
       .then((ascending) => setLaunches(ascending))
+      .then(() => setDisplayedButton("descendingButton"))
       .then(() => setLoading(false));
   }
   //this gets the launches in an ascending order
@@ -93,6 +96,23 @@ const LaunchContainer = () => {
       .then(() => setLoading(false));
   }
 
+  function renderButton() {
+    switch (displayedButton) {
+      case "ascendingButton":
+        return (
+          <button onClick={getAscending} className="button">
+            <p> Sort ascending </p>
+          </button>
+        );
+      case "descendingButton":
+        return (
+          <button onClick={getDescending} className="button">
+            <p> Sort descending </p>
+          </button>
+        );
+    } ///this toggles the button sorting the launches from ascending to descending - split out into button component later
+  }
+
   return (
     <>
       <div>
@@ -108,14 +128,14 @@ const LaunchContainer = () => {
               selectedLaunchYear={selectedLaunchYear}
               onDateSelected={handleDateSelected}
             />
-
-            <button onClick={getDescending} className="button">
+            <div>{renderButton()}</div>
+            {/* <button onClick={getDescending} className="button">
               <p> Sort descending </p>
             </button>
 
             <button onClick={getAscending} className="button">
               <p> Sort ascending </p>
-            </button>
+            </button> */}
           </div>
         </div>
 
