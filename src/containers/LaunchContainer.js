@@ -54,6 +54,8 @@ const LaunchContainer = () => {
       .then(() => setLoading(false));
   }
 
+  ///this gets the launches in a descending order
+
   async function getAscending() {
     setLoading(true);
     const ascending = await fetch(
@@ -64,6 +66,7 @@ const LaunchContainer = () => {
       .then((ascending) => setLaunches(ascending))
       .then(() => setLoading(false));
   }
+  //this gets the launches in an ascending order
 
   async function getReloadedData() {
     setLoading(true);
@@ -76,6 +79,7 @@ const LaunchContainer = () => {
       .then(() => setSelectedLaunchYear(""))
       .then(() => setLoading(false));
   }
+  //this fetches all launches from API again
 
   async function handleDateSelected(selectedLaunchYear) {
     setSelectedLaunchYear(selectedLaunchYear);
