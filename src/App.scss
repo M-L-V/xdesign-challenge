@@ -71,6 +71,8 @@
   font-family: "Brandon Grotesque";
   max-width: fit-content;
   min-width: 145px;
+  margin-right: 1em;
+  cursor: pointer;
   & > p {
     margin: 0.5em;
   }
@@ -82,6 +84,9 @@
 .reload-button {
   @extend .button;
   border-radius: 20px 0px 0px 20px;
+  position: fixed;
+  right: -15px;
+  top: 10px;
   & > p {
     margin: 0.5em;
   }
@@ -97,4 +102,13 @@
   padding: 10px;
   font-family: "Brandon Grotesque";
   min-width: 135px;
+  margin-right: 1em;
+  min-height: 50px;
+  cursor: pointer;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2em;
 }
