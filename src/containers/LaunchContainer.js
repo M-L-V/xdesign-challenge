@@ -35,6 +35,14 @@ const LaunchContainer = () => {
     fetchAllLaunches();
   }, []);
 
+  if (loading) {
+    return <h2> loading the launches... </h2>;
+  }
+
+  if (!loading) {
+    console.log("loaded!");
+  }
+
   async function handleDateSelected(selectedLaunchYear) {
     setSelectedLaunchYear(selectedLaunchYear);
     const results = await fetch(
