@@ -54,6 +54,17 @@ const LaunchContainer = () => {
       .then(() => setLoading(false));
   }
 
+  async function getAscending() {
+    setLoading(true);
+    const ascending = await fetch(
+      `https://api.spacexdata.com/v3/launches?order=asc`
+    );
+    ascending
+      .json()
+      .then((ascending) => setLaunches(ascending))
+      .then(() => setLoading(false));
+  }
+
   async function handleDateSelected(selectedLaunchYear) {
     setSelectedLaunchYear(selectedLaunchYear);
     const results = await fetch(
@@ -65,6 +76,7 @@ const LaunchContainer = () => {
   return (
     <>
       <button onClick={getDescending}>order by descending</button>
+      <button onClick={getAscending}> order by ascending </button>
       <DateSelector
         launches={launches}
         allLaunchYears={allLaunchYears}
