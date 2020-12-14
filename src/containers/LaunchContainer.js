@@ -65,6 +65,18 @@ const LaunchContainer = () => {
       .then(() => setLoading(false));
   }
 
+  async function getReloadedData() {
+    setLoading(true);
+    const reloadedData = await fetch(
+      `https://api.spacexdata.com/v3/launches?order=asc`
+    );
+    reloadedData
+      .json()
+      .then((reloadedData) => setLaunches(reloadedData))
+      .then(() => setSelectedLaunchYear(""))
+      .then(() => setLoading(false));
+  }
+
   async function handleDateSelected(selectedLaunchYear) {
     setSelectedLaunchYear(selectedLaunchYear);
     const results = await fetch(
@@ -77,6 +89,7 @@ const LaunchContainer = () => {
     <>
       <button onClick={getDescending}>order by descending</button>
       <button onClick={getAscending}> order by ascending </button>
+      <button onClick={getReloadedData}> Reload data </button>
       <DateSelector
         launches={launches}
         allLaunchYears={allLaunchYears}
