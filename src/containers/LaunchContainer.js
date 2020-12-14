@@ -95,19 +95,23 @@ const LaunchContainer = () => {
 
   return (
     <>
-      <button onClick={getDescending}>order by descending</button>
-      <button onClick={getAscending}> order by ascending </button>
-      <button onClick={getReloadedData}> Reload data </button>
-      <DateSelector
-        launches={launches}
-        allLaunchYears={allLaunchYears}
-        selectedLaunchYear={selectedLaunchYear}
-        onDateSelected={handleDateSelected}
-      />
       <div>
-        {launches.map((element) => (
-          <LaunchItem launch={element} key={element.mission_name} />
-        ))}
+        <div>
+          <button onClick={getDescending}>order by descending</button>
+          <button onClick={getAscending}> order by ascending </button>
+          <button onClick={getReloadedData}> Reload data </button>
+          <DateSelector
+            launches={launches}
+            allLaunchYears={allLaunchYears}
+            selectedLaunchYear={selectedLaunchYear}
+            onDateSelected={handleDateSelected}
+          />
+          <div className="launches-list">
+            {launches.map((element) => (
+              <LaunchItem launch={element} key={element.mission_name} />
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );
