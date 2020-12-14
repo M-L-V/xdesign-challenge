@@ -97,9 +97,9 @@ const LaunchContainer = () => {
     <>
       <div>
         <div className="button-container">
-          <div onClick={getReloadedData} className="reload-button">
+          <button onClick={getReloadedData} className="reload-button">
             <p> Reload data </p>
-          </div>
+          </button>
 
           <div className="button-wrapper">
             <DateSelector
@@ -109,13 +109,13 @@ const LaunchContainer = () => {
               onDateSelected={handleDateSelected}
             />
 
-            <div onClick={getDescending} className="button">
+            <button onClick={getDescending} className="button">
               <p> Sort descending </p>
-            </div>
+            </button>
 
-            <div onClick={getAscending} className="button">
+            <button onClick={getAscending} className="button">
               <p> Sort ascending </p>
-            </div>
+            </button>
           </div>
         </div>
 
