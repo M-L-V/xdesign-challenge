@@ -1,11 +1,13 @@
-import "./App.css";
+import "./App.scss";
+
 import LaunchContainer from "./containers/LaunchContainer";
+import ListContainer from "./containers/ListContainer";
 
 function App() {
   return (
     <div className="App">
-      <h1> welcome to the Space-X launch tracker </h1>
-      <LaunchContainer />
+      {/* <LaunchContainer /> */}
+      <ListContainer />
     </div>
   );
 }
