@@ -19,6 +19,7 @@ const LaunchItem = (props) => {
     <div>
       <h1>{props.launch.mission_name}</h1>
       <p> {props.launch.flight_number} </p>
+      <p> {translateDate(props.launch.launch_date_utc)}</p>
     </div>
   );
 };
