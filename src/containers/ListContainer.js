@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import LaunchContainer from "./LaunchContainer";
+import logo from "../assets/img/spacex-logo.png";
+import launchImage from "../assets/img/launch-home.png";
 
 class ListContainer extends Component {
   render() {
@@ -7,10 +9,11 @@ class ListContainer extends Component {
       <div className="launch-container">
         <div className="launch-container__images">
           <div className="launch-container__images_container">
-            <img src={"/assets/img/spacex-logo.png"} className="logo" />
-            <img src={"/assets/img/launch-home.png"} className="rocket-image" />
+            <img src={logo} className="logo" />
+            <img src={launchImage} className="rocket-image" />
           </div>
         </div>
+
         <div className="launch-container__launches">
           <LaunchContainer />
         </div>
