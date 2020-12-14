@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import LaunchItem from "../components/LaunchItem";
+import DateSelector from "../components/DateSelector";
 
 const LaunchContainer = () => {
   const [launches, setLaunches] = useState([]);
@@ -34,8 +35,22 @@ const LaunchContainer = () => {
     fetchAllLaunches();
   }, []);
 
+  async function handleDateSelected(selectedLaunchYear) {
+    setSelectedLaunchYear(selectedLaunchYear);
+    const results = await fetch(
+      `https://api.spacexdata.com/v3/launches?launch_year=${selectedLaunchYear}` //here, the API is fetched to load all results that match this query
+    );
+    results.json().then((results) => setLaunches(results));
+  }
+
   return (
     <>
+      <DateSelector
+        launches={launches}
+        allLaunchYears={allLaunchYears}
+        selectedLaunchYear={selectedLaunchYear}
+        onDateSelected={handleDateSelected}
+      />
       <div>
         {launches.map((element) => (
           <LaunchItem launch={element} key={element.mission_name} />
