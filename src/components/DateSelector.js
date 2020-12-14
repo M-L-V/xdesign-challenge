@@ -1,6 +1,6 @@
 import React from "react";
 
-const DateSelector = () => {
+const DateSelector = (props) => {
   function handleChange(event) {
     props.onDateSelected(event.target.value);
   }
@@ -8,7 +8,7 @@ const DateSelector = () => {
 
   const uniqueDateList = props.allLaunchYears.map((date) => {
     return (
-      <option value={date} key={dte}>
+      <option value={date} key={date}>
         {date}
       </option> //this makes a dropdown of all the dates passed in from the state of all the launch years
     );
