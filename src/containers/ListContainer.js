@@ -9,7 +9,10 @@ class ListContainer extends Component {
       <div className="launch-container">
         <div className="launch-container__images">
           <div className="launch-container__images_container">
-            <img src={logo} className="logo" />
+            <div className="logo-wrapper">
+              <img src={logo} className="logo" />
+              <p> LAUNCHES</p>
+            </div>
             <img src={launchImage} className="rocket-image" />
           </div>
         </div>
