@@ -1,15 +1,25 @@
 @import "/stylesheet.scss";
 
-// / .App {
-//   //   text-align: center;
-//   // } */
-.launch-container {
-  display: flex;
-  padding: 2em;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: $font-color;
+  font-family: "Brandon Grotesque";
+  font-weight: 300;
+}
+h1 {
+  font-weight: 600;
+}
+h2 {
+  font-weight: 500;
 }
 
-.logo {
-  max-height: 50px;
+.launch-container {
+  display: flex;
   padding: 2em;
 }
 
@@ -27,30 +37,20 @@
 }
 
 .launch-item__wrapper > h1 {
-  color: $font-color;
-  font-family: "Brandon Grotesque";
   flex-grow: 1;
 }
 .launch-item__wrapper > h2 {
-  font-family: "Brandon Grotesque";
   font-size: 2em;
-  color: $font-color;
-  font-weight: 500;
+
   flex-grow: 1;
 }
 
 .launch-item__date {
   display: flex;
   flex-direction: column;
-  & > p {
-    font-family: "Brandon Grotesque";
-    color: $font-color;
-    font-weight: 300;
-  }
+
   & > h3 {
     margin-top: 0em;
-    font-family: "Brandon Grotesque";
-    color: $font-color;
   }
 }
 
@@ -59,13 +59,24 @@
   flex-direction: column;
 }
 
+.logo {
+  max-height: 30px;
+  margin-top: 2em;
+}
+
+.logo-wrapper {
+  display: flex;
+  > p {
+    font-size: 2em;
+  }
+}
+
 .launch-container__launches {
   margin-top: 2em;
 }
 
 .button {
   background-color: $primary-blue;
-  color: white;
   border: none;
   padding: 5px;
   font-family: "Brandon Grotesque";
@@ -75,6 +86,7 @@
   cursor: pointer;
   & > p {
     margin: 0.5em;
+    color: white !important;
   }
   & > p::after {
     content: url("/assets/icon/sort.png");
@@ -89,6 +101,7 @@
   top: 10px;
   & > p {
     margin: 0.5em;
+    color: white !important;
   }
   & > p::after {
     content: url("/assets/icon/refresh.png");
