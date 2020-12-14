@@ -96,24 +96,26 @@ const LaunchContainer = () => {
   return (
     <>
       <div>
-        <div onClick={getReloadedData} className="reload-button">
-          <p> Reload data </p>
-        </div>
-
-        <div className="button-wrapper">
-          <DateSelector
-            launches={launches}
-            allLaunchYears={allLaunchYears}
-            selectedLaunchYear={selectedLaunchYear}
-            onDateSelected={handleDateSelected}
-          />
-
-          <div onClick={getDescending} className="button">
-            <p> Sort descending </p>
+        <div className="button-container">
+          <div onClick={getReloadedData} className="reload-button">
+            <p> Reload data </p>
           </div>
 
-          <div onClick={getAscending} className="button">
-            <p> Sort ascending </p>
+          <div className="button-wrapper">
+            <DateSelector
+              launches={launches}
+              allLaunchYears={allLaunchYears}
+              selectedLaunchYear={selectedLaunchYear}
+              onDateSelected={handleDateSelected}
+            />
+
+            <div onClick={getDescending} className="button">
+              <p> Sort descending </p>
+            </div>
+
+            <div onClick={getAscending} className="button">
+              <p> Sort ascending </p>
+            </div>
           </div>
         </div>
 
