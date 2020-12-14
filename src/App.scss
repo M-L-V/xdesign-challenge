@@ -5,6 +5,7 @@
 //   // } */
 .launch-container {
   display: flex;
+  padding: 2em;
 }
 
 .logo {
@@ -13,7 +14,7 @@
 }
 
 .rocket-image {
-  max-height: 400px;
+  max-height: 100%;
   padding: 2em;
 }
 
@@ -28,13 +29,29 @@
 .launch-item__wrapper > h1 {
   color: $font-color;
   font-family: "Brandon Grotesque";
-  flex-grow: 2;
+  flex-grow: 1;
 }
 .launch-item__wrapper > h2 {
   font-family: "Brandon Grotesque";
   font-size: 2em;
   color: $font-color;
+  font-weight: 500;
   flex-grow: 1;
+}
+
+.launch-item__date {
+  display: flex;
+  flex-direction: column;
+  & > p {
+    font-family: "Brandon Grotesque";
+    color: $font-color;
+    font-weight: 300;
+  }
+  & > h3 {
+    margin-top: 0em;
+    font-family: "Brandon Grotesque";
+    color: $font-color;
+  }
 }
 
 .launch-container__images_container {
@@ -44,4 +61,40 @@
 
 .launch-container__launches {
   margin-top: 2em;
+}
+
+.button {
+  background-color: $primary-blue;
+  color: white;
+  border: none;
+  padding: 5px;
+  font-family: "Brandon Grotesque";
+  max-width: fit-content;
+  min-width: 145px;
+  & > p {
+    margin: 0.5em;
+  }
+  & > p::after {
+    content: url("/assets/icon/sort.png");
+  }
+}
+
+.reload-button {
+  @extend .button;
+  border-radius: 20px 0px 0px 20px;
+  & > p {
+    margin: 0.5em;
+  }
+  & > p::after {
+    content: url("/assets/icon/refresh.png");
+  }
+}
+
+.drop-down {
+  background-color: $primary-blue;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-family: "Brandon Grotesque";
+  min-width: 135px;
 }
