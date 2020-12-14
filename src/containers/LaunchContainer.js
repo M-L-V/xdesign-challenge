@@ -79,10 +79,14 @@ const LaunchContainer = () => {
 
   async function handleDateSelected(selectedLaunchYear) {
     setSelectedLaunchYear(selectedLaunchYear);
+    setLoading(true);
     const results = await fetch(
       `https://api.spacexdata.com/v3/launches?launch_year=${selectedLaunchYear}` //here, the API is fetched to load all results that match this query
     );
-    results.json().then((results) => setLaunches(results));
+    results
+      .json()
+      .then((results) => setLaunches(results))
+      .then(() => setLoading(false));
   }
 
   return (
