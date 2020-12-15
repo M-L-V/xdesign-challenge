@@ -40,33 +40,10 @@ h2 {
   }
 }
 
-.rocket-image {
-  max-height: 100%;
-  padding: 2em;
-}
-
-.launch-item__wrapper {
-  box-shadow: 3px 3px 5px 4px #ccc;
+.logo-wrapper {
   display: flex;
-  margin-bottom: 1em;
-  padding: 0.5em;
-  border-radius: 15px;
-}
-
-.launch-item__wrapper > h1 {
-  flex-grow: 1;
-}
-.launch-item__wrapper > h2 {
-  font-size: 2em;
-  flex-grow: 1;
-}
-
-.launch-item__date {
-  display: flex;
-  flex-direction: column;
-
-  & > h3 {
-    margin-top: 0em;
+  > p {
+    font-size: 2em;
   }
 }
 
@@ -76,21 +53,24 @@ h2 {
     flex-direction: column;
   }
 }
+.rocket-image {
+  max-height: 100%;
+  padding: 2em;
+}
 
 .logo {
   max-height: 30px;
   margin-top: 2em;
 }
 
-.logo-wrapper {
-  display: flex;
-  > p {
-    font-size: 2em;
-  }
-}
-
 .launch-container__launches {
   margin-top: 2em;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2em;
 }
 
 .button {
@@ -100,6 +80,7 @@ h2 {
   font-family: "Brandon Grotesque";
   max-width: fit-content;
   min-width: 145px;
+  min-height: 50px;
   margin-right: 1em;
   cursor: pointer;
 
@@ -139,8 +120,24 @@ h2 {
   cursor: pointer;
 }
 
-.button-wrapper {
+.launch-item {
+  box-shadow: 3px 3px 5px 4px #ccc;
   display: flex;
-  justify-content: flex-end;
-  padding: 2em;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  border-radius: 15px;
+  & > h1 {
+    flex-grow: 1;
+  }
+  & > h2 {
+    flex-grow: 1;
+    font-size: 2em;
+  }
+  &__date {
+    display: flex;
+    flex-direction: column;
+    & > h3 {
+      margin-top: 0em;
+    }
+  }
 }
