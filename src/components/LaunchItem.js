@@ -16,8 +16,8 @@ const LaunchItem = (props) => {
   };
 
   return (
-    <div className="launch-item">
-      <div className="launch-item__wrapper">
+    <div>
+      <div className="launch-item">
         <h1> #{props.launch.flight_number} </h1>
         <h2>{props.launch.mission_name}</h2>
         <div className="launch-item__date">
