@@ -12,7 +12,7 @@ const LaunchItem = (props) => {
       day: "numeric",
     };
     const translatedDate = event.toLocaleDateString(undefined, options);
-    return translatedDate;
+    return translatedDate; //this turns the UTC date into the more readable format requested in wireframe
   };
 
   return (
