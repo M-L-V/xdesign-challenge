@@ -37,7 +37,7 @@ const LaunchContainer = () => {
   }, []);
 
   if (loading) {
-    return <h2> loading the launches... </h2>;
+    return <h2 className="loading"> loading the launches </h2>;
   }
 
   if (!loading) {
@@ -110,7 +110,7 @@ const LaunchContainer = () => {
             <p> Sort descending </p>
           </button>
         );
-    } ///this toggles the button sorting the launches from ascending to descending - split out into button component later
+    } ///this toggles the button sorting the launches from ascending to descending - so if you click on ascending, it turns into the descending one for resorting the data
   }
 
   return (
@@ -129,13 +129,6 @@ const LaunchContainer = () => {
               onDateSelected={handleDateSelected}
             />
             <div>{renderButton()}</div>
-            {/* <button onClick={getDescending} className="button">
-              <p> Sort descending </p>
-            </button>
-
-            <button onClick={getAscending} className="button">
-              <p> Sort ascending </p>
-            </button> */}
           </div>
         </div>
 
