@@ -1,3 +1,16 @@
+# Project aims
+
+This task was to create a React application that will consume data from the SpaceX public API. The application must retrieve historic and future SpaceX launches and present them in a list view. The MVP was to cover the following bases:
+
+- As a user, I want the ability to load the full list of SpaceX launches from the SpaceX API
+- As a user, I want the ability to reload the data to see any new changes
+- As a user, I want the ability to filter the launch list by year
+- As a user, I want the ability to sort all launches by date (ascending/descending)
+
+Due to time constraints caused issues over the weekend, I did not manage to complete the unit tests. If I had had more time, I would have created several tests with Jest to test the components. I also created the project in Javascript over Typescript for speed, but ideally would have liked to follow best practice and created the application in Typescript.
+
+Additionally, I wasn't sure as to whether the `As a user, I want the ability to sort all launches by date (ascending/descending)` requirement was to cover also sorting a filtered response, and so currently the button that toggles between sorting by ascending and descending just refetches the API endpoints that order all launches in the required manner.
+
 # Getting Started with Create React App
 
 `SpaceX Challenge` was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
